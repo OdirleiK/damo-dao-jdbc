@@ -5,12 +5,15 @@ import model_dao.SellerDao;
 import model_entities.Department;
 import model_entities.Seller;
 
+
 import java.util.Date;
 import java.util.List;
 
 public class Program {
 
-    public static void main(String[]args){
+    public static void main(String[]args)  {
+
+
 
         SellerDao sellerDao = DaoFactory.createSellerDao();
 
@@ -31,6 +34,16 @@ public class Program {
             System.out.println(obj);
         }
 
+        System.out.println("=== Teste 4: seller Insert ===");
+        Seller newSeller = new Seller(
+                null,
+                "Carlos",
+                "carlos@gmail.com",
+                new Date(),
+                4000.0,
+                department);
+        sellerDao.insert(newSeller);
+        System.out.println("Insert! new id: " + newSeller.getId());
    }
 
 
