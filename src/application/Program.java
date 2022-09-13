@@ -44,7 +44,11 @@ public class Program {
                 department);
         sellerDao.insert(newSeller);
         System.out.println("Insert! new id: " + newSeller.getId());
+
+        System.out.println("=== Teste 5: seller update ===");
+        seller = sellerDao.findById(1);
+        seller.setName("Bruce Wayne");
+        sellerDao.update(seller);
+        System.out.println("Update Completed");
    }
-
-
 }
